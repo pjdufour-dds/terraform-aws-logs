@@ -31,4 +31,4 @@ workflows:
   version: 2
   validate:
     jobs:
-      - validate
+      - terratest
