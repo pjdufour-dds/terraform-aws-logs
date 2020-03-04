@@ -1,3 +1,4 @@
+/*
 module "aws_logs" {
   source         = "../../"
   s3_bucket_name = var.test_name
@@ -18,7 +19,7 @@ resource "aws_lb" "test_lb" {
     enabled = true
   }
 }
-
+*/
 module "vpc" {
   source         = "terraform-aws-modules/vpc/aws"
   version        = "~> 2"
