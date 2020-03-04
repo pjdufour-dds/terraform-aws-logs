@@ -18,11 +18,10 @@ resource "aws_lb" "test_alb" {
   }
 }
 
-module "aws_cloudtrail" {
-  source                    = "trussworks/cloudtrail/aws"
-  version                   = "~> 2"
-  s3_bucket_name            = module.aws_logs.aws_logs_bucket
-  cloudwatch_log_group_name = var.test_name
+resource "aws_cloudtrail" "main" {
+  name           = var.test_name
+  s3_bucket_name = module.aws_logs.aws_logs_bucket
+  s3_key_prefix  = "cloudtrail"
 }
 
 module "config" {
